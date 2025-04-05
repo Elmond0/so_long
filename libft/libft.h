@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miricci <miricci@student.42.fr>            +#+  +:+       +#+        */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:55:16 by miricci           #+#    #+#             */
-/*   Updated: 2025/03/04 14:19:08 by miricci          ###   ########.fr       */
+/*   Updated: 2025/04/05 10:21:58 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 # include <stdio.h>
 # include <string.h>
 # include <fcntl.h>
-#include "ft_printf/ft_printf.h"
+# include <unistd.h>
+# include <stdarg.h>
+# include <fcntl.h>
+#include <limits.h>
 
 
 typedef struct s_list
@@ -71,5 +74,21 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_free(void **s, int i);
+// FT_PRINTF
+int	ft_putptr(void *ptr);
+int	ft_putchar(char c);
+int	ft_putnbr(int nbr);
+int	ft_putstr(const char *s);
+int	ft_putnbr_hex(unsigned long nbr, char c);
+int	ft_putnbr_unsigned(unsigned int nbr);
+int	ft_printf(const char *format, ...);
+// GET:NEXT_LINE
+char	*get_next_line(int fd);
+char	*read_line(char *saved, int fd);
+char	*ft_get_strjoin(char *s1, char *s2);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 8
+# endif
 
 #endif
