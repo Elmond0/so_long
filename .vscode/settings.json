@@ -1,6 +1,8 @@
 {
 	"files.associations": {
 		"stdio.h": "c",
-		"so_long.h": "c"
+		"so_long.h": "c",
+		"GAME_KEYPRESSED.C": "cpp",
+		"string.h": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:30:43 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/05 15:25:37 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/08 13:08:43 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,69 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <string.h>
-#include "libft/libft.h"
-#include "mlx/mlx.h"
-#include "mlx/mlx_int.h"
+# include "libft/libft.h"
+# include "mlx/mlx.h"
+# include "mlx/mlx_int.h"
 
+# define TRUE 1
+# define FALSE 0
+
+/* ********************************** */
+/*            KEYBOARD CODES          */
+/* ********************************** */
+# define KB_W 119
+# define KB_S 115
+# define KB_A 97
+# define KB_D 100
+# define KB_ESC 65307
+# define KB_UP 65362
+# define KB_DOWN 65364
+# define KB_LEFT 65361
+# define KB_RIGHT 65363
+
+
+//walls
+# define FLOOR "assets/sheets/tiles/grass.xpm"
+# define MURR "assets/sheets/tiles/walltree.xpm"
+# define WALL_BL "assets/sheets/tiles/walltree.xpm"
+# define WALL_BR "assets/sheets/tiles/walltree.xpm"
+# define WALL_C "assets/sheets/tiles/walltree.xpm"
+# define WALL_L "assets/sheets/tiles/walltree.xpm"
+# define WALL_ML "assets/sheets/tiles/walltree.xpm"
+# define WALL_MR "assets/sheets/tiles/walltree.xpm"
+# define WALL_R "assets/sheets/tiles/walltree.xpm"
+# define WALL_BC "assets/sheets/tiles/walltree.xpm"
+//Player
+# define SFRONT "assets/sheets/bunny/stop_front.xpm"
+# define SBACK "assets/sheets/bunny/stop_back.xpm"
+# define SLEFT "assets/sheets/bunny/stop_left.xpm"
+# define SRIGHT "assets/sheets/bunny/stop_right.xpm"
+# define WBACK "assets/sheets/bunny/walking_back.xpm"
+# define WBACK2 "assets/sheets/bunny/walking_back2.xpm"
+# define WFRONT "assets/sheets/bunny/walking_front.xpm"
+# define WFRONT2 "assets/sheets/bunny/walking_front2.xpm"
+# define WLEFT "assets/sheets/bunny/walking_left.xpm"
+# define WLEFT2 "assets/sheets/bunny/walking_left2.xpm"
+# define WRIGHT "assets/sheets/bunny/walking_right.xpm"
+# define WRIGHT2 "assets/sheets/bunny/walking_right2.xpm"
+//Collectable (coin)
+# define COIN1 "assets/sheets/coin/coin.xpm"
+# define COIN2 "assets/sheets/coin/coin.xpm"
+# define COIN3 "assets/sheets/coin/coin.xpm"
+# define COIN4 "assets/sheets/coin/coin.xpm"
+# define COIN5 "assets/sheets/coin/coin.xpm"
+# define COIN6 "assets/sheets/coin/coin.xpm"
+//Exit (UFO)
+# define EXIT2 "assets/sheets/exit/metal.xpm"
+# define EXIT1 "assets/sheets/exit/metal.xpm"
+# define EXIT3 "assets/sheets/exit/metal.xpm"
+# define EXIT4 "assets/sheets/exit/metal.xpm"
+# define EXIT5 "assets/sheets/exit/metal.xpm"
+# define EXIT6 "assets/sheets/exit/gold.xpm"
+# define EXIT7 "assets/sheets/exit/gold.xpm"
+# define EXIT8 "assets/sheets/exit/gold.xpm"
+# define EXIT9 "assets/sheets/exit/gold.xpm"
+# define EXIT10 "assets/sheets/exit/gold.xpm"
 
 /* ********************************** */
 /*              STRUCTS               */
@@ -110,13 +169,13 @@ typedef struct s_game
 
 //FT_UTILS
 int	ft_check_extention(char *file_name);
-void	error_message(int flag);
+void		error_message(int flag);
 int	ft_countchar(char *str);
 //MAP_INIT
 int	map_lines_counter(char *file_path);
 int	map_char_counter(char *file_path);
-t_game	*map_init(char *file_path);
-char	**map_read(char *file_path);
+t_game		*map_init(char *file_path);
+char		**map_read(char *file_path);
 //MAP_VALIDATION
 int	map_valid_allrequisites(t_map *map, char *file_path);
 int	map_valid_havecharacters(t_map *map);
@@ -125,12 +184,66 @@ int	map_valid_havemustchar(t_map *map);
 int	map_valid_haveminsize(t_map *map);
 //MAP_VALIDATION2
 int	map_valid_havepath(t_map *map, char **map_copy);
-
-//FT_FREE
-void	free_dp_char(char **dp_char);
 int	flood_fill(char **map, int y, int x);
 int	map_valid_havemaxsize(t_map *map);
 char	**matrix_dup(t_map *map, char **map_todup);
 int	flood_fill_c(char **map, int y, int x);
+
+//FT_FREE
+void	free_dp_char(char **dp_char);
+void	free_coin_imgptr(t_game *game);
+void	free_player_imgptr(t_game *game);
+void	free_map_imgptr(t_game *game);
+void	free_game_struct(t_game *game);
+
+//FREE2
+void	free_exit_imgptr(t_game *game);
+
+//GAME_INIT
+void	game_init_master(t_game *game);
+t_game	*game_init_structs(t_game *game);
+void	game_init_values(t_game *game);
+//GET_MIMAGES
+void	get_mapimg(t_game *game);
+void	get_playerimg(t_game *game);
+void	get_coinimg(t_game *game);
+void	get_exitimg(t_game *game);
+
+//GAME_UTILS
+int	game_close(t_game *game);
+void	check_nullvalues_pc(t_game *game, char pointers);
+void	check_nullvalues_me(t_game *game, char pointers);
+int	map_print(t_map *map, char **map_copy);
+
+//GAME_DRAW
+int	game_drawmap(t_game *game);
+void	draw_mapcorners(t_game *game);
+void	draw_mapwallup(t_game *game);
+void	draw_mapwallbottom(t_game *game);
+//GAME_DRAW2
+void	draw_mapwall_left(t_game *game);
+void	draw_mapwall_right(t_game *game);
+void	draw_mapcenter(t_game *game);
+void	draw_mapcoins(t_game *game);
+void	draw_exit(t_game *game);
+//GAME_RENDER
+void	render_elmt(t_game *game, void *img, int width, int height);
+void	render_coin(t_game *game, int width, int height);
+void	render_exit(t_game *game, int width, int height);
+//GAME_PLAY
+int	game_play(t_game *game);
+void	take_coin(t_game *game, char keypressed);
+void	take_coin_lr(t_game *game, int keypressed);
+void	take_coin_du(t_game *game, int keypressed);
+void	update_tookcoinvalues(t_game *game, int y, int x);
+//GAME_KEYPRESSED
+int	game_keypressed(int keypressed, t_game *game);
+void	key_up_pressed(t_game *game);
+void	key_down_pressed(t_game *game);
+void	key_left_pressed(t_game *game);
+void	key_right_pressed(t_game *game);
+//GAME_ANIMATION
+int	coin_animation(t_game *game);
+int	exit_animation(t_game *game);
 
 #endif

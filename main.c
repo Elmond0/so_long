@@ -9,8 +9,13 @@ int	main(int argc, char **argv)
 		game = map_init(argv[1]);
 		if (map_valid_allrequisites(game->map, argv[1]))
 		{
-			ft_printf("OK");
+			game_init_master(game);
+			game_play(game);
+			mlx_loop(game->data_mlx->connect);
 		}
+		free_dp_char(game->map->map_skeleton);
+		free(game->map);
+		free(game);
 	}
 	else
 		error_message(1);

@@ -10,7 +10,9 @@ CFLAG = -Wall -Wextra -Werror
 
 MLXFLAG = -ldl -lmlx -L$(MLX_DIR) -lm -lXext -lX11 -IMlx $(MLX_PATH)
 
-SRCS = main.c ft_utils.c map_init.c ft_free.c map_validation.c map_validation2.c
+SRCS = 	main.c ft_utils.c map_init.c ft_free.c map_validation.c map_validation2.c \
+	game_init.c get_images.c game_utils.c ft_free2.c game_draw.c game_draw2.c \
+	game_render.c game_play.c game_keypress.c game_animation.c
 
 OBJS = $(SRCS:.c=.o)
 
