@@ -27,7 +27,6 @@ void	take_coin(t_game *game, char keypressed)
 		mlx_loop_hook(game->data_mlx->connect, exit_animation, game);
 	}
 }
-
 void	take_coin_lr(t_game *game, int keypressed)
 {
 	char		**map_skeleton;
