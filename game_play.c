@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_play.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:48:25 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:48:25 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 //Main function for the game
@@ -16,6 +28,7 @@ int	game_play(t_game *game)
 	mlx_loop_hook(conn, coin_animation, game);
 	return (0);
 }
+
 //Update Coin value when player pass by.
 void	take_coin(t_game *game, char keypressed)
 {
@@ -27,6 +40,7 @@ void	take_coin(t_game *game, char keypressed)
 		mlx_loop_hook(game->data_mlx->connect, exit_animation, game);
 	}
 }
+
 void	take_coin_lr(t_game *game, int keypressed)
 {
 	char		**map_skeleton;
@@ -53,6 +67,7 @@ void	take_coin_lr(t_game *game, int keypressed)
 			32 * pl->pl_x, 32 * pl->pl_y);
 	}
 }
+
 //Update Coin value when player pass by.
 void	take_coin_du(t_game *game, int keypressed)
 {

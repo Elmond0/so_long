@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_draw2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:45:51 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:46:05 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 //Draw the left walls of the map.
@@ -20,6 +32,7 @@ void	draw_mapwall_left(t_game *game)
 		i ++;
 	}
 }
+
 //Draw the right walls of the map
 void	draw_mapwall_right(t_game *game)
 {
@@ -45,6 +58,7 @@ void	draw_mapwall_right(t_game *game)
 		i ++;
 	}
 }
+
 //draw the center tiles of the map
 //init player position from t_player struct
 void	draw_mapcenter(t_game *game)
@@ -74,6 +88,7 @@ void	draw_mapcenter(t_game *game)
 		}
 	}
 }
+
 //Check position of the coins.
 void	draw_mapcoins(t_game *game)
 {
@@ -94,6 +109,7 @@ void	draw_mapcoins(t_game *game)
 		}
 	}
 }
+
 //Check pos for the exit
 void	draw_exit(t_game *game)
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_draw.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:44:18 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:44:48 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 //Call all the functions to make a mapping of the positions of
@@ -15,6 +27,7 @@ int	game_drawmap(t_game *game)
 	draw_exit(game);
 	return (0);
 }
+
 //Draw the corners tiles of the map
 //-1 on renders is because the map skeleton has \n and lines count '\0'.
 void	draw_mapcorners(t_game *game)
@@ -31,6 +44,7 @@ void	draw_mapcorners(t_game *game)
 	render_elmt(game, mp->img_wallbl, 0, render_h);
 	render_elmt(game, mp->img_wallbr, render_w, render_h);
 }
+
 //Draw the center tiles from the upside (expect the corners).
 void	draw_mapwallup(t_game *game)
 {
@@ -53,6 +67,7 @@ void	draw_mapwallup(t_game *game)
 		i ++;
 	}
 }
+
 void	draw_mapwallbottom(t_game *game)
 {
 	char	**map_skeleton;

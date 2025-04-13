@@ -3,6 +3,7 @@
 		"stdio.h": "c",
 		"so_long.h": "c",
 		"GAME_KEYPRESSED.C": "cpp",
-		"string.h": "c"
+		"string.h": "c",
+		"libft.h": "c"
 	}
 }

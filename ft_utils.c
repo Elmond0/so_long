@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:48:57 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:49:14 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 //Check if the ARGV have the .ber at the end and if its a valid file.
@@ -17,6 +29,7 @@ int	ft_check_extention(char *file_name)
 	close(fd);
 	return (1);
 }
+
 //Similar to ft_strlen()
 //Counts the number of char in a string
 //Until it reachs one \n or '\0'
@@ -32,6 +45,7 @@ int	ft_countchar(char *str)
 		i ++;
 	return (i);
 }
+
 //For personalizated error messages
 void	error_message(int flag)
 {

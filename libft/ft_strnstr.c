@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miricci <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 18:16:30 by miricci           #+#    #+#             */
-/*   Updated: 2024/11/19 18:16:33 by miricci          ###   ########.fr       */
+/*   Created: 2024/11/19 18:16:30 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:38:40 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include <bsd/string.h>
 #include "libft.h"
 //	----- HA UN ARGOMENTO IN PIU DEL NORMALE STRCMP -------

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:47:53 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:48:49 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	free_dp_char(char **dp_char)
@@ -14,6 +26,7 @@ void	free_dp_char(char **dp_char)
 	}
 	free(dp_char);
 }
+
 void	free_game_struct(t_game *game)
 {
 	free_dp_char(game->map->map_skeleton);
@@ -61,4 +74,3 @@ void	free_coin_imgptr(t_game *game)
 	connect = game->data_mlx->connect;
 	mlx_destroy_image(connect, game->coin->c_imgs[0]);
 }
-

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_init.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:40:57 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:50:25 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 //Inits all the structures and elements necessary
 //for the game. Ps. 32 is related to the size of the images.
@@ -20,6 +32,7 @@ void	game_init_master(t_game *game)
 	get_exitimg(game);
 	game_drawmap(game);
 }
+
 //Initialize the structures for the game
 //except for the main struct and the map struct.
 //Return the main struct with the structures inside initialized
@@ -45,6 +58,7 @@ t_game	*game_init_structs(t_game *game)
 	game->coin = coin;
 	return (game);
 }
+
 //Set initial values for variables of the structs
 void	game_init_values(t_game *game)
 {

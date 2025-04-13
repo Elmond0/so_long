@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_validation.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:42:37 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:43:08 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 //Valid all the requisites for a valid map
 //return 1 for a valid map and error_message(), 0 for invalid
@@ -19,6 +31,7 @@ int	map_valid_allrequisites(t_map *map, char *file_path)
 		return (error_message(2), 0);
 	}
 }
+
 //Check to see if there is some invalid char in the map
 //return 1 if there is only valid chars and 0 if not
 int	map_valid_havecharacters(t_map *map)
@@ -43,6 +56,7 @@ int	map_valid_havecharacters(t_map *map)
 	}
 	return (1);
 }
+
 //Verify if the map is sorrounded by 11111
 //return 1 for valid and 0 and error for invalid map
 int	map_valid_isclosed(t_map *map)

@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:30:43 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:00:29 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/13 16:57:32 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@
 # define KB_LEFT 65361
 # define KB_RIGHT 65363
 
-
 //walls
 # define FLOOR "assets/sheets/tiles/grass.xpm"
 # define MURR "assets/sheets/tiles/walltree.xpm"
@@ -67,7 +66,6 @@
 # define COIN1 "assets/sheets/coin/coin.xpm"
 //Exit
 # define EXIT1 "assets/sheets/exit/bunnyhole.xpm"
-
 
 /* ********************************** */
 /*              STRUCTS               */
@@ -155,27 +153,26 @@ typedef struct s_game
 }	t_game;
 
 //FT_UTILS
-int	ft_check_extention(char *file_name);
-void		error_message(int flag);
-int	ft_countchar(char *str);
+int		ft_check_extention(char *file_name);
+void	error_message(int flag);
+int		ft_countchar(char *str);
 //MAP_INIT
-int	map_lines_counter(char *file_path);
-int	map_char_counter(char *file_path);
-t_game		*map_init(char *file_path);
-char		**map_read(char *file_path);
+int		map_lines_counter(char *file_path);
+int		map_char_counter(char *file_path);
+t_game	*map_init(char *file_path);
+char	**map_read(char *file_path);
 //MAP_VALIDATION
-int	map_valid_allrequisites(t_map *map, char *file_path);
-int	map_valid_havecharacters(t_map *map);
-int	map_valid_isclosed(t_map *map);
-int	map_valid_havemustchar(t_map *map);
-int	map_valid_haveminsize(t_map *map);
+int		map_valid_allrequisites(t_map *map, char *file_path);
+int		map_valid_havecharacters(t_map *map);
+int		map_valid_isclosed(t_map *map);
+int		map_valid_havemustchar(t_map *map);
+int		map_valid_haveminsize(t_map *map);
 //MAP_VALIDATION2
-int	map_valid_havepath(t_map *map, char **map_copy);
-int	flood_fill(char **map, int y, int x);
-int	map_valid_havemaxsize(t_map *map);
+int		map_valid_havepath(t_map *map, char **map_copy);
+int		flood_fill(char **map, int y, int x);
+int		map_valid_havemaxsize(t_map *map);
 char	**matrix_dup(t_map *map, char **map_todup);
-int	flood_fill_c(char **map, int y, int x);
-
+int		flood_fill_c(char **map, int y, int x);
 //FT_FREE
 void	free_dp_char(char **dp_char);
 void	free_coin_imgptr(t_game *game);
@@ -197,13 +194,13 @@ void	get_coinimg(t_game *game);
 void	get_exitimg(t_game *game);
 
 //GAME_UTILS
-int	game_close(t_game *game);
+int		game_close(t_game *game);
 void	check_nullvalues_pc(t_game *game, char pointers);
 void	check_nullvalues_me(t_game *game, char pointers);
-int	map_print(t_map *map, char **map_copy);
+int		map_print(t_map *map, char **map_copy);
 
 //GAME_DRAW
-int	game_drawmap(t_game *game);
+int		game_drawmap(t_game *game);
 void	draw_mapcorners(t_game *game);
 void	draw_mapwallup(t_game *game);
 void	draw_mapwallbottom(t_game *game);
@@ -218,19 +215,19 @@ void	render_elmt(t_game *game, void *img, int width, int height);
 void	render_coin(t_game *game, int width, int height);
 void	render_exit(t_game *game, int width, int height);
 //GAME_PLAY
-int	game_play(t_game *game);
+int		game_play(t_game *game);
 void	take_coin(t_game *game, char keypressed);
 void	take_coin_lr(t_game *game, int keypressed);
 void	take_coin_du(t_game *game, int keypressed);
 void	update_tookcoinvalues(t_game *game, int y, int x);
 //GAME_KEYPRESSED
-int	game_keypressed(int keypressed, t_game *game);
+int		game_keypressed(int keypressed, t_game *game);
 void	key_up_pressed(t_game *game);
 void	key_down_pressed(t_game *game);
 void	key_left_pressed(t_game *game);
 void	key_right_pressed(t_game *game);
 //GAME_ANIMATION
-int	coin_animation(t_game *game);
-int	exit_animation(t_game *game);
+int		coin_animation(t_game *game);
+int		exit_animation(t_game *game);
 
 #endif

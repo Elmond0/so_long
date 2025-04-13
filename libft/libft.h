@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 18:55:16 by miricci           #+#    #+#             */
-/*   Updated: 2025/04/05 10:21:58 by elmondo          ###   ########.fr       */
+/*   Created: 2024/11/27 18:55:16 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:42:15 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <fcntl.h>
-#include <limits.h>
-
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -75,13 +74,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_free(void **s, int i);
 // FT_PRINTF
-int	ft_putptr(void *ptr);
-int	ft_putchar(char c);
-int	ft_putnbr(int nbr);
-int	ft_putstr(const char *s);
-int	ft_putnbr_hex(unsigned long nbr, char c);
-int	ft_putnbr_unsigned(unsigned int nbr);
-int	ft_printf(const char *format, ...);
+int		ft_putptr(void *ptr);
+int		ft_putchar(char c);
+int		ft_putnbr(int nbr);
+int		ft_putstr(const char *s);
+int		ft_putnbr_hex(unsigned long nbr, char c);
+int		ft_putnbr_unsigned(unsigned int nbr);
+int		ft_printf(const char *format, ...);
 // GET:NEXT_LINE
 char	*get_next_line(int fd);
 char	*read_line(char *saved, int fd);

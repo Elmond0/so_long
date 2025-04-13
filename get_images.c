@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_images.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:47:10 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:47:42 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 //Get the xpm images to the void pointers into he map structure
@@ -23,9 +35,9 @@ void	get_mapimg(t_game *game)
 	mp->img_wallmr = mlx_xpm_file_to_image(conn, WALL_MR, &gih, &giw);
 	mp->img_wallr = mlx_xpm_file_to_image(conn, WALL_R, &gih, &giw);
 	mp->img_wallbc = mlx_xpm_file_to_image(conn, WALL_BC, &gih, &giw);
-	
 	check_nullvalues_me(game, 'm');
 }
+
 //Get the xpm images to the void pointers into the player structure
 //check for null values after to mischeck error
 void	get_playerimg(t_game *game)
@@ -53,6 +65,7 @@ void	get_playerimg(t_game *game)
 	gp->img_wright2 = mlx_xpm_file_to_image(conn, WRIGHT2, &gih, &giw);
 	check_nullvalues_pc(game, 'p');
 }
+
 //Get the xpm images to the void pointers into the coin structure
 //check for null values after to mischeck error
 void	get_coinimg(t_game *game)
@@ -69,6 +82,7 @@ void	get_coinimg(t_game *game)
 	coin->c_imgs[0] = mlx_xpm_file_to_image(conn, COIN1, &h, &w);
 	check_nullvalues_pc(game, 'c');
 }
+
 void	get_exitimg(t_game *game)
 {
 	t_mlx_data	*conn;

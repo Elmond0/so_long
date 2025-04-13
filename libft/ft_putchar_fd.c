@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miricci <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 18:44:56 by miricci           #+#    #+#             */
-/*   Updated: 2024/11/27 18:45:46 by miricci          ###   ########.fr       */
+/*   Created: 2024/11/27 18:44:56 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:37:06 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+
 #include <stdio.h>
 #include <fcntl.h>
 

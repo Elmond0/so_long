@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miricci <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 17:04:04 by miricci           #+#    #+#             */
-/*   Updated: 2024/11/18 17:04:07 by miricci          ###   ########.fr       */
+/*   Created: 2024/11/18 17:04:04 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:36:59 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include "libft.h"
 #include <string.h>
 

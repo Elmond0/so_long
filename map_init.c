@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_init.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 16:45:21 by elmondo           #+#    #+#             */
+/*   Updated: 2025/04/13 16:45:38 by elmondo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 //Read the map file.
@@ -27,6 +39,7 @@ char	**map_read(char *file_path)
 	close(fd);
 	return (map);
 }
+
 //Count how many lines
 //exist on the map file.
 //returns an integer with the nbr of lines.
@@ -56,6 +69,7 @@ int	map_lines_counter(char *file_path)
 	close(fd);
 	return (i);
 }
+
 //Counts the number of chars in the strings
 //uses ft_countchar() instead of ft_strlen() because
 //we need to take \n in consideration.
@@ -89,6 +103,7 @@ int	map_char_counter(char *file_path)
 	free_dp_char(map);
 	return (first_line_size);
 }
+
 //init the map structure with values
 //that we took from other functions
 //returns the map structure filled with values.
