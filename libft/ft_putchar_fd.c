@@ -6,12 +6,13 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:44:56 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:37:06 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/13 17:00:32 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
 {
