@@ -26,9 +26,7 @@ int	game_close(t_game *game)
 void	check_nullvalues_pc(t_game *game, char pointers)
 {
 	t_player	*gp;
-	int			i;
 
-	i = 0;
 	gp = game->player;
 	if (pointers == 'p')
 	{
@@ -42,12 +40,8 @@ void	check_nullvalues_pc(t_game *game, char pointers)
 	}
 	if (pointers == 'c')
 	{
-		while (i <= 5)
-		{
-			if (game->coin->c_imgs[i] == NULL)
-				ft_printf("ERROR AT GAME_GET_COINIMG\n");
-			i ++;
-		}
+		if (game->coin->c_imgs[0] == NULL)
+			ft_printf("ERROR AT GAME_GET_COINIMG\n");
 	}
 }
 
@@ -72,9 +66,7 @@ void	check_nullvalues_me(t_game *game, char pointers)
 	}
 	if (pointers == 'e')
 	{
-		if (!ex->e_imgs[0] || !ex->e_imgs[1] || !ex->e_imgs[2]
-			|| !ex->e_imgs[3] || !ex->e_imgs[4] || !ex->e_imgs[5]
-			|| !ex->e_imgs[6] || !ex->e_imgs[7])
+		if (!ex->e_imgs[0])
 			ft_printf("ERROR AT GAME_GET_EXITIMG\n");
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:30:43 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/12 11:41:43 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/13 16:00:29 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,22 +65,9 @@
 # define WRIGHT2 "assets/sheets/bunny/walking_right2.xpm"
 //Collectable (coin)
 # define COIN1 "assets/sheets/coin/coin.xpm"
-# define COIN2 "assets/sheets/coin/coin.xpm"
-# define COIN3 "assets/sheets/coin/coin.xpm"
-# define COIN4 "assets/sheets/coin/coin.xpm"
-# define COIN5 "assets/sheets/coin/coin.xpm"
-# define COIN6 "assets/sheets/coin/coin.xpm"
-//Exit (UFO)
-# define EXIT2 "assets/sheets/exit/metal.xpm"
-# define EXIT1 "assets/sheets/exit/metal.xpm"
-# define EXIT3 "assets/sheets/exit/metal.xpm"
-# define EXIT4 "assets/sheets/exit/metal.xpm"
-# define EXIT5 "assets/sheets/exit/metal.xpm"
-# define EXIT6 "assets/sheets/exit/gold.xpm"
-# define EXIT7 "assets/sheets/exit/gold.xpm"
-# define EXIT8 "assets/sheets/exit/gold.xpm"
-# define EXIT9 "assets/sheets/exit/gold.xpm"
-# define EXIT10 "assets/sheets/exit/gold.xpm"
+//Exit
+# define EXIT1 "assets/sheets/exit/bunnyhole.xpm"
+
 
 /* ********************************** */
 /*              STRUCTS               */
@@ -131,15 +118,15 @@ typedef struct s_player
 //For Collectable (Coin)
 typedef struct s_coin
 {
-	void	*c_imgs[6];
+	void	*c_imgs[0];
 	int		coin_pos;
 	int		coin_loop;
 }	t_coin;
 
-//For Exit (UFO)
+//For Exit 
 typedef struct s_exit
 {
-	void	*e_imgs[10];
+	void	*e_imgs[0];
 	int		exit_pos;
 	int		exit_loop;
 	int		exit_yes;

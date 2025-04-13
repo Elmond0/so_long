@@ -60,10 +60,5 @@ void	free_coin_imgptr(t_game *game)
 
 	connect = game->data_mlx->connect;
 	mlx_destroy_image(connect, game->coin->c_imgs[0]);
-	mlx_destroy_image(connect, game->coin->c_imgs[1]);
-	mlx_destroy_image(connect, game->coin->c_imgs[2]);
-	mlx_destroy_image(connect, game->coin->c_imgs[3]);
-	mlx_destroy_image(connect, game->coin->c_imgs[4]);
-	mlx_destroy_image(connect, game->coin->c_imgs[5]);
 }
 

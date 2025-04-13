@@ -67,11 +67,6 @@ void	get_coinimg(t_game *game)
 	h = game->img_h;
 	w = game->img_w;
 	coin->c_imgs[0] = mlx_xpm_file_to_image(conn, COIN1, &h, &w);
-	coin->c_imgs[1] = mlx_xpm_file_to_image(conn, COIN2, &h, &w);
-	coin->c_imgs[2] = mlx_xpm_file_to_image(conn, COIN3, &h, &w);
-	coin->c_imgs[3] = mlx_xpm_file_to_image(conn, COIN4, &h, &w);
-	coin->c_imgs[4] = mlx_xpm_file_to_image(conn, COIN5, &h, &w);
-	coin->c_imgs[5] = mlx_xpm_file_to_image(conn, COIN6, &h, &w);
 	check_nullvalues_pc(game, 'c');
 }
 void	get_exitimg(t_game *game)
@@ -86,14 +81,5 @@ void	get_exitimg(t_game *game)
 	h = game->img_h;
 	w = game->img_w;
 	exit->e_imgs[0] = mlx_xpm_file_to_image(conn, EXIT1, &h, &w);
-	exit->e_imgs[1] = mlx_xpm_file_to_image(conn, EXIT2, &h, &w);
-	exit->e_imgs[2] = mlx_xpm_file_to_image(conn, EXIT3, &h, &w);
-	exit->e_imgs[3] = mlx_xpm_file_to_image(conn, EXIT4, &h, &w);
-	exit->e_imgs[4] = mlx_xpm_file_to_image(conn, EXIT5, &h, &w);
-	exit->e_imgs[5] = mlx_xpm_file_to_image(conn, EXIT6, &h, &w);
-	exit->e_imgs[6] = mlx_xpm_file_to_image(conn, EXIT7, &h, &w);
-	exit->e_imgs[7] = mlx_xpm_file_to_image(conn, EXIT8, &h, &w);
-	exit->e_imgs[8] = mlx_xpm_file_to_image(conn, EXIT9, &h, &w);
-	exit->e_imgs[9] = mlx_xpm_file_to_image(conn, EXIT10, &h, &w);
 	check_nullvalues_me(game, 'e');
 }
