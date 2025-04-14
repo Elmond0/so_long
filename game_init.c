@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:40:57 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:50:25 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:09:02 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_game	*game_init_structs(t_game *game)
 	exit = malloc(sizeof(t_exit));
 	if (!data_mlx || !player || !coin || !exit)
 	{
-		error_message(11);
+		error_message3(11);
 		return (NULL);
 	}
 	game->data_mlx = data_mlx;

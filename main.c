@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:46:21 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:46:56 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/14 11:50:08 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	main(int argc, char **argv)
 {
 	t_game	*game;
-
+	static	int c;
+	
+	c = 0;
 	if (argc == 2 && ft_check_extention(argv[1]) == 1)
 	{
 		game = map_init(argv[1]);

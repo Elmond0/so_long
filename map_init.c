@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:45:21 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:45:38 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:18:56 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	map_char_counter(char *file_path)
 	{
 		if (ft_countchar(map[i]) != first_line_size)
 		{
-			error_message(4);
+			error_message2(4);
 			ft_printf("Line %i invalid\n", i + 1);
 			free_dp_char(map);
 			return (-1);

@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:42:37 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:43:08 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:10:17 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	map_valid_havecharacters(t_map *map)
 		{
 			if (line[i][j] != 'C' && line[i][j] != 'P' && line[i][j] != 'E'
 				&& line[i][j] != '1' && line[i][j] != '0' && line[i][j] != '\n')
-				return (error_message(5), 0);
+				return (error_message2(5), 0);
 			j ++;
 		}
 		i ++;
@@ -72,13 +72,13 @@ int	map_valid_isclosed(t_map *map)
 	{
 		if ((lines[0][i] != '1' && lines[0][i] != '\n')
 			|| (last[i] != '1' && last[i] != '\n' && last[i] != '\0'))
-			return (error_message(6), 0);
+			return (error_message2(6), 0);
 	}
 	i = 0;
 	while (lines[++i] != NULL)
 	{
 		if (lines[i][0] != '1' || lines[i][map->qt_chars_lines - 1] != '1')
-			return (error_message(6), 0);
+			return (error_message2(6), 0);
 	}
 	return (1);
 }
@@ -108,9 +108,9 @@ int	map_valid_havemustchar(t_map *map)
 		}
 	}
 	if (map->qt_collect < 1)
-		return (error_message(7), 0);
+		return (error_message2(7), 0);
 	if (map->qt_player != 1 || map->qt_exit != 1)
-		return (error_message(8), 0);
+		return (error_message3(8), 0);
 	return (1);
 }
 
@@ -120,6 +120,6 @@ int	map_valid_havemustchar(t_map *map)
 int	map_valid_haveminsize(t_map *map)
 {
 	if (map->qt_lines + map->qt_chars_lines < 9)
-		return (error_message(9), 0);
+		return (error_message3(9), 0);
 	return (1);
 }

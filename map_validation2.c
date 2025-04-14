@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:45:07 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:45:07 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:09:22 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	map_valid_havemaxsize(t_map *map)
 {
 	if (map->qt_chars_lines > 60
 		|| map->qt_lines > 30)
-		return (error_message(9), 0);
+		return (error_message3(9), 0);
 	return (1);
 }
 

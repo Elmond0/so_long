@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:30:43 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:57:32 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:08:41 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,33 @@
 # define KB_RIGHT 65363
 
 //walls
-# define FLOOR "assets/sheets/tiles/grass.xpm"
-# define MURR "assets/sheets/tiles/walltree.xpm"
-# define WALL_BL "assets/sheets/tiles/walltree.xpm"
-# define WALL_BR "assets/sheets/tiles/walltree.xpm"
-# define WALL_C "assets/sheets/tiles/walltree.xpm"
-# define WALL_L "assets/sheets/tiles/walltree.xpm"
-# define WALL_ML "assets/sheets/tiles/walltree.xpm"
-# define WALL_MR "assets/sheets/tiles/walltree.xpm"
-# define WALL_R "assets/sheets/tiles/walltree.xpm"
-# define WALL_BC "assets/sheets/tiles/walltree.xpm"
+# define FLOOR "textures/sheets/tiles/grass.xpm"
+# define MURR "textures/sheets/tiles/walltree.xpm"
+# define WALL_BL "textures/sheets/tiles/walltree.xpm"
+# define WALL_BR "textures/sheets/tiles/walltree.xpm"
+# define WALL_C "textures/sheets/tiles/walltree.xpm"
+# define WALL_L "textures/sheets/tiles/walltree.xpm"
+# define WALL_ML "textures/sheets/tiles/walltree.xpm"
+# define WALL_MR "textures/sheets/tiles/walltree.xpm"
+# define WALL_R "textures/sheets/tiles/walltree.xpm"
+# define WALL_BC "textures/sheets/tiles/walltree.xpm"
 //Player
-# define SFRONT "assets/sheets/bunny/stop_front.xpm"
-# define SBACK "assets/sheets/bunny/stop_back.xpm"
-# define SLEFT "assets/sheets/bunny/stop_left.xpm"
-# define SRIGHT "assets/sheets/bunny/stop_right.xpm"
-# define WBACK "assets/sheets/bunny/walking_back.xpm"
-# define WBACK2 "assets/sheets/bunny/walking_back2.xpm"
-# define WFRONT "assets/sheets/bunny/walking_front.xpm"
-# define WFRONT2 "assets/sheets/bunny/walking_front2.xpm"
-# define WLEFT "assets/sheets/bunny/walking_left.xpm"
-# define WLEFT2 "assets/sheets/bunny/walking_left2.xpm"
-# define WRIGHT "assets/sheets/bunny/walking_right.xpm"
-# define WRIGHT2 "assets/sheets/bunny/walking_right2.xpm"
+# define SFRONT "textures/sheets/bunny/stop_front.xpm"
+# define SBACK "textures/sheets/bunny/stop_back.xpm"
+# define SLEFT "textures/sheets/bunny/stop_left.xpm"
+# define SRIGHT "textures/sheets/bunny/stop_right.xpm"
+# define WBACK "textures/sheets/bunny/walking_back.xpm"
+# define WBACK2 "textures/sheets/bunny/walking_back2.xpm"
+# define WFRONT "textures/sheets/bunny/walking_front.xpm"
+# define WFRONT2 "textures/sheets/bunny/walking_front2.xpm"
+# define WLEFT "textures/sheets/bunny/walking_left.xpm"
+# define WLEFT2 "textures/sheets/bunny/walking_left2.xpm"
+# define WRIGHT "textures/sheets/bunny/walking_right.xpm"
+# define WRIGHT2 "textures/sheets/bunny/walking_right2.xpm"
 //Collectable (coin)
-# define COIN1 "assets/sheets/coin/coin.xpm"
+# define COIN1 "textures/sheets/coin/coin.xpm"
 //Exit
-# define EXIT1 "assets/sheets/exit/bunnyhole.xpm"
+# define EXIT1 "textures/sheets/exit/bunnyhole.xpm"
 
 /* ********************************** */
 /*              STRUCTS               */
@@ -155,6 +155,8 @@ typedef struct s_game
 //FT_UTILS
 int		ft_check_extention(char *file_name);
 void	error_message(int flag);
+void	error_message2(int flag);
+void	error_message3(int flag);
 int		ft_countchar(char *str);
 //MAP_INIT
 int		map_lines_counter(char *file_path);

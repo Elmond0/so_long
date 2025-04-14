@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:48:57 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/13 16:49:14 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:20:28 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,28 +49,85 @@ int	ft_countchar(char *str)
 //For personalizated error messages
 void	error_message(int flag)
 {
+	static int c;
+	
+	if (c == 0)
+		write(2, "Error\n", 6);
 	if (flag == 0)
-		write(2, "Error\nInvalid Sintax\n", 22);
+	{
+		write(2, "Invalid Sintax\n", 16);
+		c++;
+	}
 	if (flag == 1)
-		write(2, "Error\nCouldn't open map file.\n", 30);
+	{
+		write(2, "Couldn't open map file.\n", 24);
+		c++;
+	}
 	if (flag == 2)
-		write(2, "Error\nInvalid Map.\n", 19);
+	{
+		write(2, "Invalid Map.\n", 13);
+		ft_printf("%d", c);
+		c++;
+	}
 	if (flag == 3)
-		write(2, "Error\nInvalid Map init.\n", 24);
-	if (flag == 4)
-		write(2, "Error\nInvalid Map line.\n", 24);
-	if (flag == 5)
-		write(2, "Error\nInvalid Map - invalid char on map.\n", 42);
-	if (flag == 6)
-		write(2, "Error\nMap not closed.\n", 23);
-	if (flag == 7)
-		write(2, "Error\nNo collectables.\n", 23);
-	if (flag == 8)
-		write(2, "Error\nOnly 1 Player/Exit.\n", 26);
-	if (flag == 9)
-		write(2, "Error\nInvalid Map Size\n", 24);
-	if (flag == 10)
-		write(2, "Error\nError importing map image\n", 33);
-	if (flag == 11)
-		write(2, "Error\nError Initializing Structs\n", 33);
+	{	
+		write(2, "Invalid Map init.\n", 18);
+		c++;
+	}
 }
+void	error_message2(int flag)
+{
+	static int c;
+	
+	if (c == 0)
+		write(2, "Error\n", 6);
+	if (flag == 4)
+	{
+		write(2, "Invalid Map line.\n", 18);
+		ft_printf("%d", c);
+		c = 1;
+	}
+	if (flag == 5)
+	{
+		write(2, "Invalid Map - invalid char on map.\n", 36);
+		c++;
+	}
+	if (flag == 6)
+	{
+		write(2, "Map not closed.\n", 17);
+		c++;
+	}
+	if (flag == 7)
+	{
+		write(2, "No collectables.\n", 17);
+		c++;
+	}
+}
+void	error_message3(int flag)
+{
+	static int c;
+	
+	if (c == 0)
+		write(2, "Error\n", 6);
+	if (flag == 8)
+	{
+		write(2, "Invalid Map line.\n", 18);
+		c++;
+	}
+	if (flag == 9)
+	{
+		write(2, "Invalid Map - invalid char on map.\n", 36);
+		c++;
+	}
+	if (flag == 10)
+	{
+		write(2, "Map not closed.\n", 17);
+		c++;
+	}
+	if (flag == 11)
+	{
+		write(2, "No collectables.\n", 17);
+		c++;
+	}
+}
+
