@@ -49,7 +49,7 @@ t_game	*game_init_structs(t_game *game)
 	exit = malloc(sizeof(t_exit));
 	if (!data_mlx || !player || !coin || !exit)
 	{
-		error_message3(11);
+		error_message3(11, game);
 		return (NULL);
 	}
 	game->data_mlx = data_mlx;

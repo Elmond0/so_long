@@ -15,13 +15,16 @@
 int	main(int argc, char **argv)
 {
 	t_game	*game;
-	static	int c;
-	
-	c = 0;
+
+	game = malloc(sizeof(t_game));
+	ft_memset(game, 0, sizeof(t_game));
+	game->error = 3;
+	if (!game)
+		return (error_message(3, game), 1);
 	if (argc == 2 && ft_check_extention(argv[1]) == 1)
 	{
-		game = map_init(argv[1]);
-		if (map_valid_allrequisites(game->map, argv[1]))
+		game = map_init(argv[1], game);
+		if (map_valid_allrequisites(game->map, argv[1], game))
 		{
 			game_init_master(game);
 			game_play(game);
@@ -32,6 +35,6 @@ int	main(int argc, char **argv)
 		free(game);
 	}
 	else
-		error_message(1);
+		error_message(1, game);
 	return (0);
 }

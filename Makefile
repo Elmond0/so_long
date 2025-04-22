@@ -1,6 +1,6 @@
 NAME = so_long
 
-MLX_DIR = mlx
+MLX_DIR = minilibx-linux
 
 MLX_PATH = $(MLX_DIR)/libmlx.a
 

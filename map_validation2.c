@@ -59,11 +59,11 @@ int	flood_fill(char **map, int y, int x)
 	return (0);
 }
 
-int	map_valid_havemaxsize(t_map *map)
+int	map_valid_havemaxsiz(t_map *map, t_game *game)
 {
 	if (map->qt_chars_lines > 60
 		|| map->qt_lines > 30)
-		return (error_message3(9), 0);
+		return (error_message3(9, game), 0);
 	return (1);
 }
 

@@ -47,87 +47,80 @@ int	ft_countchar(char *str)
 }
 
 //For personalizated error messages
-void	error_message(int flag)
+void	error_message(int flag, t_game *game)
 {
-	static int c;
-	
-	if (c == 0)
+	if (game->error == 3)
 		write(2, "Error\n", 6);
 	if (flag == 0)
 	{
 		write(2, "Invalid Sintax\n", 16);
-		c++;
+		game->error = 1;
 	}
 	if (flag == 1)
 	{
 		write(2, "Couldn't open map file.\n", 24);
-		c++;
+		game->error = 1;
 	}
 	if (flag == 2)
 	{
 		write(2, "Invalid Map.\n", 13);
-		ft_printf("%d", c);
-		c++;
+		game->error = 1;
 	}
 	if (flag == 3)
-	{	
+	{
 		write(2, "Invalid Map init.\n", 18);
-		c++;
+		game->error = 1;
 	}
 }
-void	error_message2(int flag)
+
+void	error_message2(int flag, t_game *game)
 {
-	static int c;
-	
-	if (c == 0)
+	if (game->error == 3)
 		write(2, "Error\n", 6);
 	if (flag == 4)
 	{
 		write(2, "Invalid Map line.\n", 18);
-		ft_printf("%d", c);
-		c = 1;
+		game->error = 1;
 	}
 	if (flag == 5)
 	{
 		write(2, "Invalid Map - invalid char on map.\n", 36);
-		c++;
+		game->error = 1;
 	}
 	if (flag == 6)
 	{
 		write(2, "Map not closed.\n", 17);
-		c++;
+		game->error = 1;
 	}
 	if (flag == 7)
 	{
 		write(2, "No collectables.\n", 17);
-		c++;
+		game->error = 1;
 	}
 }
-void	error_message3(int flag)
+
+void	error_message3(int flag, t_game *game)
 {
-	static int c;
-	
-	if (c == 0)
+	if (game->error == 3)
 		write(2, "Error\n", 6);
 	if (flag == 8)
 	{
 		write(2, "Invalid Map line.\n", 18);
-		c++;
+		game->error = 1;
 	}
 	if (flag == 9)
 	{
 		write(2, "Invalid Map - invalid char on map.\n", 36);
-		c++;
+		game->error = 1;
 	}
 	if (flag == 10)
 	{
 		write(2, "Map not closed.\n", 17);
-		c++;
+		game->error = 1;
 	}
 	if (flag == 11)
 	{
 		write(2, "No collectables.\n", 17);
-		c++;
+		game->error = 1;
 	}
 }
-

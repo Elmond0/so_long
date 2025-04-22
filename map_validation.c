@@ -13,14 +13,14 @@
 #include "so_long.h"
 //Valid all the requisites for a valid map
 //return 1 for a valid map and error_message(), 0 for invalid
-int	map_valid_allrequisites(t_map *map, char *file_path)
+int	map_valid_allrequisites(t_map *map, char *file_path, t_game *game)
 {
 	char	**map_copy;
 
-	map_copy = map_read(file_path);
-	if (map_valid_havecharacters(map) && map_valid_isclosed(map)
-		&& map_valid_havemustchar(map) && map_valid_haveminsize(map)
-		&& map_valid_havepath(map, map_copy) && map_valid_havemaxsize(map))
+	map_copy = map_read(file_path, game);
+	if (map_valid_havecharacters(map, game) && map_valid_isclosed(map, game)
+		&& map_valid_havemustchar(map, game) && map_valid_haveminsize(map, game)
+		&& map_valid_havepath(map, map_copy) && map_valid_havemaxsiz(map, game))
 	{
 		free_dp_char(map_copy);
 		return (1);
@@ -28,13 +28,13 @@ int	map_valid_allrequisites(t_map *map, char *file_path)
 	else
 	{
 		free_dp_char(map_copy);
-		return (error_message(2), 0);
+		return (error_message(2, game), 0);
 	}
 }
 
 //Check to see if there is some invalid char in the map
 //return 1 if there is only valid chars and 0 if not
-int	map_valid_havecharacters(t_map *map)
+int	map_valid_havecharacters(t_map *map, t_game *game)
 {
 	char	**line;
 	int		i;
@@ -49,7 +49,7 @@ int	map_valid_havecharacters(t_map *map)
 		{
 			if (line[i][j] != 'C' && line[i][j] != 'P' && line[i][j] != 'E'
 				&& line[i][j] != '1' && line[i][j] != '0' && line[i][j] != '\n')
-				return (error_message2(5), 0);
+				return (error_message2(5, game), 0);
 			j ++;
 		}
 		i ++;
@@ -59,7 +59,7 @@ int	map_valid_havecharacters(t_map *map)
 
 //Verify if the map is sorrounded by 11111
 //return 1 for valid and 0 and error for invalid map
-int	map_valid_isclosed(t_map *map)
+int	map_valid_isclosed(t_map *map, t_game *game)
 {
 	char	**lines;
 	char	*last;
@@ -72,20 +72,20 @@ int	map_valid_isclosed(t_map *map)
 	{
 		if ((lines[0][i] != '1' && lines[0][i] != '\n')
 			|| (last[i] != '1' && last[i] != '\n' && last[i] != '\0'))
-			return (error_message2(6), 0);
+			return (error_message2(6, game), 0);
 	}
 	i = 0;
 	while (lines[++i] != NULL)
 	{
 		if (lines[i][0] != '1' || lines[i][map->qt_chars_lines - 1] != '1')
-			return (error_message2(6), 0);
+			return (error_message2(6, game), 0);
 	}
 	return (1);
 }
 
 //Validate if there is at least 1C, ONLY 1E and ONLY 1P.
 //Returns error_messa(), 0 for not valid and 1 for valid.
-int	map_valid_havemustchar(t_map *map)
+int	map_valid_havemustchar(t_map *map, t_game *game)
 {
 	char	**lines;
 	int		i;
@@ -108,18 +108,18 @@ int	map_valid_havemustchar(t_map *map)
 		}
 	}
 	if (map->qt_collect < 1)
-		return (error_message2(7), 0);
+		return (error_message2(7, game), 0);
 	if (map->qt_player != 1 || map->qt_exit != 1)
-		return (error_message3(8), 0);
+		return (error_message3(8, game), 0);
 	return (1);
 }
 
 //Validate the minimun size of the map.
 //The minimun size acceptable is if the sum of the sizes if smaller than 8.
 //Return error_message(), 0 for invalid map, and 1 for valid map.
-int	map_valid_haveminsize(t_map *map)
+int	map_valid_haveminsize(t_map *map, t_game *game)
 {
 	if (map->qt_lines + map->qt_chars_lines < 9)
-		return (error_message3(9), 0);
+		return (error_message3(9, game), 0);
 	return (1);
 }

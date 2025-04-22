@@ -14,7 +14,7 @@
 
 //Read the map file.
 //Returns a double pointer with the map content stored on it.
-char	**map_read(char *file_path)
+char	**map_read(char *file_path, t_game *game)
 {
 	int		fd;
 	char	**map;
@@ -22,7 +22,7 @@ char	**map_read(char *file_path)
 	int		i;
 
 	fd = open(file_path, O_RDONLY);
-	map = ft_calloc(sizeof(char *), map_lines_counter(file_path) + 1);
+	map = ft_calloc(sizeof(char *), map_lines_counter(file_path, game) + 1);
 	if (!map)
 		return (NULL);
 	i = 0;
@@ -43,7 +43,7 @@ char	**map_read(char *file_path)
 //Count how many lines
 //exist on the map file.
 //returns an integer with the nbr of lines.
-int	map_lines_counter(char *file_path)
+int	map_lines_counter(char *file_path, t_game *game)
 {
 	int		i;
 	int		fd;
@@ -52,7 +52,7 @@ int	map_lines_counter(char *file_path)
 	fd = open(file_path, O_RDONLY);
 	if (fd < 0)
 	{
-		error_message(1);
+		error_message(1, game);
 		return (-1);
 	}
 	i = 0;
@@ -75,13 +75,13 @@ int	map_lines_counter(char *file_path)
 //we need to take \n in consideration.
 //returns an INT with the first_line_size.
 //if there is some line that the size is != to the first, return error -1.
-int	map_char_counter(char *file_path)
+int	map_char_counter(char *file_path, t_game *game)
 {
 	char	**map;
 	int		i;
 	int		first_line_size;
 
-	map = map_read(file_path);
+	map = map_read(file_path, game);
 	first_line_size = ft_countchar(map[0]);
 	if (first_line_size == 0)
 	{
@@ -93,7 +93,7 @@ int	map_char_counter(char *file_path)
 	{
 		if (ft_countchar(map[i]) != first_line_size)
 		{
-			error_message2(4);
+			error_message2(4, game);
 			ft_printf("Line %i invalid\n", i + 1);
 			free_dp_char(map);
 			return (-1);
@@ -107,22 +107,20 @@ int	map_char_counter(char *file_path)
 //init the map structure with values
 //that we took from other functions
 //returns the map structure filled with values.
-t_game	*map_init(char *file_path)
+t_game	*map_init(char *file_path, t_game *game)
 {
-	t_game	*game;
 	t_map	*map;
 
-	game = malloc(sizeof(t_game));
 	map = malloc(sizeof(t_map));
-	if (!game || !map)
-		return (error_message(3), NULL);
+	if (!map)
+		return (error_message(3, game), NULL);
 	game->map = map;
-	game->map->map_skeleton = map_read(file_path);
-	game->map->qt_lines = map_lines_counter(file_path);
-	game->map->qt_chars_lines = map_char_counter(file_path);
+	game->map->map_skeleton = map_read(file_path, game);
+	game->map->qt_lines = map_lines_counter(file_path, game);
+	game->map->qt_chars_lines = map_char_counter(file_path, game);
 	if (game->map->qt_chars_lines == -1)
 	{
-		error_message(3);
+		error_message(3, game);
 		free_dp_char(game->map->map_skeleton);
 		free(map);
 		free(game);

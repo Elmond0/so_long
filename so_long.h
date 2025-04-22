@@ -19,8 +19,8 @@
 # include <stdio.h>
 # include <string.h>
 # include "libft/libft.h"
-# include "mlx/mlx.h"
-# include "mlx/mlx_int.h"
+# include "minilibx-linux/mlx.h"
+# include "minilibx-linux/mlx_int.h"
 
 # define TRUE 1
 # define FALSE 0
@@ -150,29 +150,30 @@ typedef struct s_game
 	int			img_h;
 	int			img_w;
 	int			qt_mov;
+	int			error;
 }	t_game;
 
 //FT_UTILS
 int		ft_check_extention(char *file_name);
-void	error_message(int flag);
-void	error_message2(int flag);
-void	error_message3(int flag);
+void	error_message(int flag, t_game *game);
+void	error_message2(int flag, t_game *game);
+void	error_message3(int flag, t_game *game);
 int		ft_countchar(char *str);
 //MAP_INIT
-int		map_lines_counter(char *file_path);
-int		map_char_counter(char *file_path);
-t_game	*map_init(char *file_path);
-char	**map_read(char *file_path);
+int		map_lines_counter(char *file_path, t_game *game);
+int		map_char_counter(char *file_path, t_game *game);
+t_game	*map_init(char *file_path, t_game *game);
+char	**map_read(char *file_path, t_game *game);
 //MAP_VALIDATION
-int		map_valid_allrequisites(t_map *map, char *file_path);
-int		map_valid_havecharacters(t_map *map);
-int		map_valid_isclosed(t_map *map);
-int		map_valid_havemustchar(t_map *map);
-int		map_valid_haveminsize(t_map *map);
+int		map_valid_allrequisites(t_map *map, char *file_path, t_game *game);
+int		map_valid_havecharacters(t_map *map, t_game *game);
+int		map_valid_isclosed(t_map *map, t_game *game);
+int		map_valid_havemustchar(t_map *map, t_game *game);
+int		map_valid_haveminsize(t_map *map, t_game *game);
 //MAP_VALIDATION2
 int		map_valid_havepath(t_map *map, char **map_copy);
 int		flood_fill(char **map, int y, int x);
-int		map_valid_havemaxsize(t_map *map);
+int		map_valid_havemaxsiz(t_map *map, t_game *game);
 char	**matrix_dup(t_map *map, char **map_todup);
 int		flood_fill_c(char **map, int y, int x);
 //FT_FREE
