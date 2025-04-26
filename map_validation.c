@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:42:37 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/14 12:10:17 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/26 18:48:09 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	map_valid_allrequisites(t_map *map, char *file_path, t_game *game)
 	map_copy = map_read(file_path, game);
 	if (map_valid_havecharacters(map, game) && map_valid_isclosed(map, game)
 		&& map_valid_havemustchar(map, game) && map_valid_haveminsize(map, game)
-		&& map_valid_havepath(map, map_copy) && map_valid_havemaxsiz(map, game))
+		&& map_valid_havepath(map, map_copy) && map_valid_havemaxsiz(map, game)
+		&& shape(map, game))
 	{
 		free_dp_char(map_copy);
 		return (1);

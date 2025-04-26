@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:30:43 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/14 12:08:41 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/26 18:52:04 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,9 @@ int		flood_fill(char **map, int y, int x);
 int		map_valid_havemaxsiz(t_map *map, t_game *game);
 char	**matrix_dup(t_map *map, char **map_todup);
 int		flood_fill_c(char **map, int y, int x);
+//MAP_VALIDATION3
+int	shape(t_map *map, t_game *game);
+void	error_message4(int flag, t_game *game);
 //FT_FREE
 void	free_dp_char(char **dp_char);
 void	free_coin_imgptr(t_game *game);
