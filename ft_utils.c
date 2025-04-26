@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:48:57 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/26 18:40:54 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/26 20:48:54 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	error_message(int flag, t_game *game)
 	{
 		write(2, "Couldn't open map file.\n", 24);
 		game->error = 1;
+		free(game);
 	}
 	if (flag == 2)
 	{

@@ -6,7 +6,7 @@
 /*   By: elmondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:46:21 by elmondo           #+#    #+#             */
-/*   Updated: 2025/04/14 11:50:08 by elmondo          ###   ########.fr       */
+/*   Updated: 2025/04/26 20:50:59 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ int	main(int argc, char **argv)
 		free(game);
 	}
 	else
-		{
-			error_message(1, game);
-			free(game);
-		}
+		error_message(1, game);
 	return (0);
 }
