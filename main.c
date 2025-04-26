@@ -35,6 +35,9 @@ int	main(int argc, char **argv)
 		free(game);
 	}
 	else
-		error_message(1, game);
+		{
+			error_message(1, game);
+			free(game);
+		}
 	return (0);
 }
